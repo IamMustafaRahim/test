@@ -1,13 +1,14 @@
-class Mustafa {
-	constructor (name,age){
-		this.name = name;
-		this.age = age;
+var css = document.querySelector("h3");
+var color1 = document.querySelector(".color1");
+var color2 = document.querySelector(".color2");
+var body = document.getElementById("gradient");
 
-	}
-	echo(){
-		console.log(`hello my name is ${this.name} and my age is ${this.age} `);
-	}
-}
+function setGradient(){
+	body.style.background = "linear-gradient(to right," + color1.value + ", " +  color2.value +")";	
+	css.textContent = body.style.background + ";";
+};
 
-const mustafa = new Mustafa('mustafa',18);
-mustafa.echo();
+
+
+color1.addEventListener("input", setGradient);
+color2.addEventListener("input", setGradient);
